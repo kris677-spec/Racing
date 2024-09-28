@@ -1,68 +1,101 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
 }
-#game{
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light background for better contrast */
+}
+
+#game {
     height: 500px;
     width: 390px;
     border: 1px solid black;
     margin: 1rem auto;
-    background:url(bg.jpg) ;
+    background: url(bg.jpg);
     background-size: contain;
     overflow: hidden;
+    position: relative; /* Relative positioning for child elements */
 }
-#bluecar{
+
+#bluecar {
     height: 100px;
     width: 130px;
-    background-color: black;
     position: relative;
     top: 0px;
     left: 0px;
     text-align: center;
-    animation: move 1s linear  infinite  ;
-
+    animation: move 1s linear infinite;
 }
-#bluecar img{
+
+#bluecar img {
     height: 100px;
 }
+
 @keyframes move {
-    0%{
+    0% {
         top: 0px;
     }
-    100%{
-        top: 501px;
+    100% {
+        top: 501px; /* Ensures the blue car moves out of view */
     }
-    
 }
-#racecar{
+
+#racecar {
     height: 100px;
     width: 130px;
-    background-color: red;
     position: relative;
     top: 250px;
     left: 130px;
     text-align: center;
 }
-#racecar img{
+
+#racecar img {
     height: 100px;
 }
 
-#result{
+#controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#controls button {
+    padding: 1rem;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    background-color: black;
+    color: cyan;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px; /* Fixed width for better touch */
+}
+
+#controls button:active {
+    background-color: darkgray; /* Change background color on button press */
+}
+
+#result {
     height: 200px;
     width: 400px;
     background-color: cornflowerblue;
-    margin:  1rem auto;
+    margin: 1rem auto;
     border-radius: 20px;
     font-size: 30px;
     text-align: center;
     color: white;
-    display:none ;
+    display: none; /* Initially hidden */
 }
-#score{
+
+#score {
     font-size: 2.2rem;
     color: brown;
 }
-#btn{
+
+#btn {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     border: none;
@@ -72,4 +105,34 @@
     margin-top: 10px;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    #game {
+        width: 90%; /* Adjust game width for smaller screens */
+    }
+
+    #controls button {
+        font-size: 1.2rem; /* Smaller buttons for mobile */
+        padding: 0.5rem;
+    }
+
+    #result {
+        width: 90%; /* Adjust result width for smaller screens */
+    }
 }
