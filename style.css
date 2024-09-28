@@ -63,15 +63,15 @@ body {
 }
 
 #controls button {
-    padding: 1rem;
-    margin: 0 10px;
-    font-size: 1.5rem;
+    padding: 1.5rem; /* Increased padding for a larger button */
+    margin: 0 20px;  /* Increased margin for better spacing */
+    font-size: 2rem;  /* Larger font size for better readability */
     background-color: black;
     color: cyan;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    width: 100px; /* Fixed width for better touch */
+    width: 120px; /* Fixed width for better touch */
 }
 
 #controls button:active {
